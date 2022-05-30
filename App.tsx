@@ -1,11 +1,33 @@
 import * as React from 'react';
-import './style.css';
-
+import Greet from './components/Greet';
 export default function App() {
+  let addressDetails = {
+    city: 'Edappally',
+    district: 'Ernakulam',
+  };
+  let familyMembers = [
+    {
+      name: 'Babu',
+      relationShip: 'father',
+    },
+    {
+      name: 'Anitha Babu',
+      relationShip: 'mother',
+    },
+    {
+      name: 'Divya',
+      relationShip: 'sister',
+    },
+  ];
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+      <Greet
+        name={'Arun'}
+        age={10}
+        isMarried
+        addressDetails={addressDetails}
+        familyMembers={familyMembers}
+      />
     </div>
   );
 }
