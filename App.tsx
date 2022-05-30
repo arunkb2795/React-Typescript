@@ -1,33 +1,20 @@
 import * as React from 'react';
 import Greet from './components/Greet';
+import Home from './components/Home';
+import Card from './components/Card';
+import Heading from './components/Heading';
+
 export default function App() {
-  let addressDetails = {
-    city: 'Edappally',
-    district: 'Ernakulam',
-  };
-  let familyMembers = [
-    {
-      name: 'Babu',
-      relationShip: 'father',
-    },
-    {
-      name: 'Anitha Babu',
-      relationShip: 'mother',
-    },
-    {
-      name: 'Divya',
-      relationShip: 'sister',
-    },
-  ];
   return (
     <div>
-      <Greet
-        name={'Arun'}
-        age={10}
-        isMarried
-        addressDetails={addressDetails}
-        familyMembers={familyMembers}
-      />
+      {/* passing data as a react child */}
+      <Greet>Hi Arun welcome back.</Greet>
+      {/* passing Component as a react child */}
+      <Home>
+        <Card>
+          <Heading>Home page heading</Heading>
+        </Card>
+      </Home>
     </div>
   );
 }
