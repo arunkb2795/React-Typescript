@@ -3,6 +3,7 @@ import Greet from './components/Greet';
 import Home from './components/Home';
 import Card from './components/Card';
 import Heading from './components/Heading';
+import Status from './components/Status';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Heading>Home page heading</Heading>
         </Card>
       </Home>
+      <Status status="loading" />
     </div>
   );
 }
