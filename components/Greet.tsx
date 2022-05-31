@@ -1,20 +1,7 @@
 import * as React from 'react';
+import { PersonProps } from './Person.types';
 
-type GreetProps = {
-  name: string;
-  age: number;
-  isMarried: boolean;
-  addressDetails: {
-    city: string;
-    district: string;
-  };
-  familyMembers: {
-    name: string;
-    relationShip: string;
-  }[];
-};
-
-const Greet = (props: GreetProps) => {
+const Greet = (props: PersonProps) => {
   const { name, age, isMarried, addressDetails, familyMembers } = props;
   return (
     <div>
@@ -24,9 +11,9 @@ const Greet = (props: GreetProps) => {
       <span> {isMarried ? <p>I'm married</p> : <p>I'm single</p>}</span>
       <p>{addressDetails.city}</p>
       <p>{addressDetails.district}</p>
-      {familyMembers.map((member) => {
+      {familyMembers.map((member, index) => {
         return (
-          <div>
+          <div key={index}>
             <p>{member.name}</p>
           </div>
         );
