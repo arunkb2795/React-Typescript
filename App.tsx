@@ -1,33 +1,31 @@
 import * as React from 'react';
-import Greet from './components/Greet';
+import { useState } from 'react';
+
+type AuthUser = {
+  name: string;
+  email: string;
+};
+
 export default function App() {
-  let addressDetails = {
-    city: 'Edappally',
-    district: 'Ernakulam',
+  const [user, setUser] = useState<AuthUser | null>(null);
+
+  const handleLogin = () => {
+    setUser({
+      name: 'Arun',
+      email: 'arunkb27@gmail.com',
+    });
   };
-  let familyMembers = [
-    {
-      name: 'Babu',
-      relationShip: 'father',
-    },
-    {
-      name: 'Anitha Babu',
-      relationShip: 'mother',
-    },
-    {
-      name: 'Divya',
-      relationShip: 'sister',
-    },
-  ];
+
+  const handleLogout = () => {
+    setUser(null);
+  };
+
   return (
     <div>
-      <Greet
-        name={'Arun'}
-        age={10}
-        isMarried
-        addressDetails={addressDetails}
-        familyMembers={familyMembers}
-      />
+      <p>User name is {user?.name} </p>
+      <p>User email is {user?.email} </p>
+      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 }
