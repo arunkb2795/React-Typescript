@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { ThemeContextProvider } from './context/ThemeContext';
+import { UserContextProvider } from './context/UserContext';
 import { Box } from './Box';
 export default function App() {
   return (
     <div>
-      <ThemeContextProvider>
+      <UserContextProvider>
         <Box />
-      </ThemeContextProvider>
+      </UserContextProvider>
     </div>
   );
 }
